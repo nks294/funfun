@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://works.294.ink/funfun_api";
+const API_BASE_URL = "/funfun/api";
 
 export function call(api, method, request) {
     let options = {

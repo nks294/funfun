@@ -1,0 +1,19 @@
+# 굳이 필요 없는 항목들
+node_modules
+build
+backend/build
+backend/.gradle
+
+.git
+.gitignore
+.idea
+.vscode
+
+*.log
+
+.env
+.env.*
+data/
+backup/
+.app.env
+.db.env

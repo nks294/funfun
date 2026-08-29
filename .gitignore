@@ -1,10 +1,8 @@
-# directory
 coverage/
 build/
 .gradle/
 bin/
 
-# Temp
 .DS_Store
 package-lock.json
 Thumbs.db
@@ -12,21 +10,19 @@ Thumbs.db
 *.tmp
 *.swp
 
-# Node
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# VS Code
 .vscode/
 
-# env/key
 .env
 .env.*
 .envrc
 *.key
 *.crt
-
-# backend
-backend/src/main/resources/application.properties
+.app.env
+.db.env
+data/
+backup/

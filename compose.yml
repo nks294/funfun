@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      context: .
+    image: funfun:local
+    container_name: funfun
+    restart: unless-stopped
+    env_file:
+      - .app.env
+    ports:
+      - "127.0.0.1:8083:80"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:10.6
+    container_name: funfun-db
+    restart: unless-stopped
+    env_file:
+      - .db.env
+    volumes:
+      - ./data/mariadb:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
